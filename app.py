@@ -277,11 +277,11 @@ def main():
     ))
 
     # Parameters
-    st.sidebar.subheader("Parameters")
+   # st.sidebar.subheader("Parameters")
    # min_cost = st.sidebar.number_input("Min Cost:", min_value=1, max_value=5, value=1, step=1)
    # max_cost = st.sidebar.number_input("Max Cost:", min_value=1, max_value=5, value=3, step=1)
-    max_num_champions = st.sidebar.number_input("Max Champions:", min_value=1, max_value=10, value=7, step=1)
-    min_traits = st.sidebar.number_input("Min Traits:", min_value=1, max_value=20, value=7, step=1)
+    max_num_champions = 7 #st.sidebar.number_input("Max Champions:", min_value=1, max_value=10, value=7, step=1)
+    min_traits = 7 #st.sidebar.number_input("Min Traits:", min_value=1, max_value=20, value=7, step=1)
 
     # Owned Champions
     st.sidebar.subheader("Owned Champions")
