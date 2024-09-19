@@ -345,8 +345,14 @@ def main():
                     # 5. Check if active traits meet the criteria
                     if len(active_traits) >= min_traits:
                         total_cost = sum(champion_dict[name]['cost'] for name in combo_champs)
+                        
+                        # Separate owned champions and others, maintaining original order
+                        owned_champs_in_combo = [champ for champ in combo["Champions"] if champ in owned_champions]
+                        other_champs_in_combo = [champ for champ in combo["Champions"] if champ not in owned_champions]
+                        sorted_champs = owned_champs_in_combo + other_champs_in_combo
+
                         combo_result = {
-                            "Champions": combo["Champions"],
+                            "Champions": sorted_champs,
                             "Traits": active_traits,
                             "Total Cost": total_cost
                         }
@@ -361,6 +367,7 @@ def main():
                         progress = idx / total_possible
                         progress_bar.progress(progress)
                 status_text.text(f"Found {found_count} combination(s). Displaying first {displayed_count}.")
+
             else:
                 # Use the new combination finding algorithm
                 generator = find_compositions(
