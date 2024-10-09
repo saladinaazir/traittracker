@@ -420,5 +420,5 @@ def display_combination(composition: Dict, images: Dict[str, Image.Image], idx: 
     # st.markdown(f"**Total Cost:** {composition['Total Cost']}")
     # st.markdown("---")
 
-if name == "main":
+if __name__ == "__main__":
     main()
